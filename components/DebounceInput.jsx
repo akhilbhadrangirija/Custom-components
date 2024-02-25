@@ -22,7 +22,7 @@ function DebounceInput() {
     debounceCall(value)
   }, [value])
   return (
-    <div className="flex flex-col">
+    <div className="mx-auto flex flex-col max-w-60 my-10">
       <label htmlFor="input">Debounce input</label>
       <input
         className="text-black p-2 rounded-md"
