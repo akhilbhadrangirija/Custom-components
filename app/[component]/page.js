@@ -2,10 +2,11 @@
 
 import React, { useEffect, useState } from 'react'
 
+import BorderGradientGlassMorphButton from '@/components/BorderGradientGlassMorphButton'
 import DebounceInput from '@/components/DebounceInput'
 
 function page({ params }) {
-  const components = [<DebounceInput />]
+  const components = [<DebounceInput />, <BorderGradientGlassMorphButton />]
   const [selectedComponent, setSelectedComponent] = useState(<></>)
   useEffect(() => {
     let comp = components.find(_ => _.type.name === params.component)
