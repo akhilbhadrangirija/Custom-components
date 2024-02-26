@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from 'react'
 
-import BorderGradientGlassMorphButton from '@/components/BorderGradientGlassMorphButton'
-import DebounceInput from '@/components/DebounceInput'
+import BorderGradientGlassMorphButton from '@/customComponents/BorderGradientGlassMorphButton'
+import DebounceInput from '@/customComponents/DebounceInput'
 
-function page({ params }) {
+function page({ params, className }) {
   const components = [<DebounceInput />, <BorderGradientGlassMorphButton />]
   const [selectedComponent, setSelectedComponent] = useState(<></>)
   useEffect(() => {
