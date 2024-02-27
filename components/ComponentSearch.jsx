@@ -2,21 +2,25 @@
 
 import React, { useEffect, useMemo, useState } from 'react'
 
+import BgComponent from '@/customComponents/BgComponent'
 import BorderGradientGlassMorphButton from '@/customComponents/BorderGradientGlassMorphButton'
 import DebounceInput from '@/customComponents/DebounceInput'
 import { useRouter } from 'next/navigation'
 
 function ComponentSearch() {
-  const components = [<DebounceInput />, <BorderGradientGlassMorphButton />]
+  const components = [
+    <DebounceInput />,
+    <BorderGradientGlassMorphButton />,
+    <BgComponent />
+  ]
   const router = useRouter()
   const [output, setOutput] = useState()
-  const [selectedComp, setSelectedComp] = useState([])
+  const [selectedComp, setSelectedComp] = useState([...components])
   useEffect(() => {
-    if (!output) return setSelectedComp([])
+    if (!output) return setSelectedComp([...components])
     const comps = components.find(comp =>
       comp.type.name.toLowerCase().includes(output.toLowerCase())
     )
-    console.log('comps', comps)
     setSelectedComp([comps])
   }, [output])
   return (

@@ -2,11 +2,16 @@
 
 import React, { useEffect, useState } from 'react'
 
+import BgComponent from '@/customComponents/BgComponent'
 import BorderGradientGlassMorphButton from '@/customComponents/BorderGradientGlassMorphButton'
 import DebounceInput from '@/customComponents/DebounceInput'
 
 function page({ params, className }) {
-  const components = [<DebounceInput />, <BorderGradientGlassMorphButton />]
+  const components = [
+    <DebounceInput />,
+    <BorderGradientGlassMorphButton />,
+    <BgComponent />
+  ]
   const [selectedComponent, setSelectedComponent] = useState(<></>)
   useEffect(() => {
     let comp = components.find(_ => _.type.name === params.component)

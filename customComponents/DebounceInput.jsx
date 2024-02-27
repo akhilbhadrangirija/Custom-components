@@ -4,7 +4,6 @@ import React, { useCallback, useEffect, useState } from 'react'
 
 function DebounceInput({ label = 'DebounceInput', setOutput = () => {} }) {
   const [value, setValue] = useState()
-  // const [output, setOutput] = useState()
   const debounce = (callback, timeout = 1000) => {
     let timer
     return function (...args) {
